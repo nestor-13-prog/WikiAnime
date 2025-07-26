@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Detalle del Anime</title>
+
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <!-- Estilos personalizados -->
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- Fondo animado -->
+  <div id="particles-js" style="position: fixed; width: 100%; height: 100%; z-index: -1;"></div>
+
+  <!-- Contenido principal -->
+  <div class="container my-5">
+    <a href="index.html" class="btn btn-danger mb-4">⬅ Volver</a>
+
+    <div id="anime-detail" class="text-center p-4">
+      <!-- Aquí se carga el detalle con JS -->
+      <span id="animeSynopsisDetail"></span>
+      <br />
+      <button 
+        id="translateSynopsisBtn"
+        class="btn btn-warning fw-bold shadow-sm px-4 py-2 mt-3"
+        style="border-radius: 12px; font-size: 1rem;"
+      >
+        🌍 Traducir Sinopsis
+      </button>
+      <button
+        id="originalLangBtn"
+        class="btn btn-warning fw-bold shadow-sm px-4 py-2 mt-3"
+        style="border-radius: 12px; font-size: 1rem; display:none; margin-left: 10px;"
+      >
+        🔙 Volver al idioma original
+      </button>
+    </div>
+  </div>
+
+  <!-- Toast mensaje -->
+  <div id="toast" class="toast-message"></div>
+
+  <!-- Script partículas -->
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+  <script>
+    particlesJS("particles-js", {
+      "particles": {
+        "number": { "value": 60 },
+        "color": { "value": "#ff4b4b" },
+        "shape": { "type": "circle" },
+        "opacity": { "value": 0.3 },
+        "size": { "value": 4 },
+        "move": { "speed": 2 }
+      },
+      "interactivity": {
+        "events": {
+          "onhover": { "enable": true, "mode": "repulse" }
+        }
+      }
+    });
+  </script>
+
+  <!-- JS de detalle -->
+  <script src="js/anime.js"></script>
+</body>
+</html>

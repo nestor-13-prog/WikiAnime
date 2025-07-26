@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Anime Finder</title>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Rubik:wght@400;700&display=swap" rel="stylesheet" />
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <!-- Estilo propio -->
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <!-- Fondo animado con partículas -->
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+  <div id="particles-js" style="position: fixed; width: 100%; height: 100%; z-index: -1;"></div>
+  <script>
+    particlesJS("particles-js", {
+      "particles": {
+        "number": { "value": 80 },
+        "color": { "value": "#ff4b4b" },
+        "shape": { "type": "circle" },
+        "opacity": { "value": 0.3 },
+        "size": { "value": 4 },
+        "move": { "speed": 2 }
+      },
+      "interactivity": {
+        "events": {
+          "onhover": { "enable": true, "mode": "repulse" }
+        }
+      }
+    });
+  </script>
+
+  <div class="container my-5">
+    <h1 class="text-center mb-4">🌸 WikiAnime 🌸</h1>
+
+    <!-- Buscador -->
+    <div class="input-group mb-4">
+      <input type="text" id="animeInput" class="form-control" placeholder="Buscar anime por nombre..." />
+      <button class="btn btn-danger" onclick="buscarAnime()">Buscar</button>
+    </div>
+
+    <!-- Resultado del buscador -->
+    <div id="animeCard" class="card text-center p-3 mb-5 d-none">
+      <h2 id="animeTitle" class="text-uppercase"></h2>
+      <img id="animeImage" class="mx-auto" style="width:200px;" />
+      <p><strong>Sinopsis:</strong> <span id="animeSynopsis"></span></p>
+      <button id="translateSynopsisBtn" class="btn btn-sm btn-outline-light mt-2">Traducir sinopsis a español</button>
+      <p><strong>Episodios:</strong> <span id="animeEpisodes"></span></p>
+      <p><strong>Puntuación:</strong> <span id="animeScore"></span></p>
+    </div>
+
+    <!-- Lista de animes -->
+    <h3 class="mb-3">Animes Populares</h3>
+    <div class="row" id="popularList"></div>
+  </div>
+
+  <!-- Script JS principal -->
+  <script src="js/main.js"></script>
+</body>
+</html>
