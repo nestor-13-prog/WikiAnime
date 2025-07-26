@@ -1,0 +1,173 @@
+body {
+  font-family: 'Rubik', sans-serif;
+  background-color: #121212;
+  color: #f0f0f0;
+  text-align: center;
+  padding-bottom: 40px;
+}
+
+h1, h3 {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 22px;
+  color: #c0392b;
+}
+
+/* Tarjetas populares */
+.anime-card {
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+  background-color: #3d1f1f; /* rojo vino oscuro */
+  border: 1px solid #5a2d2d;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.4);
+}
+
+.anime-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 12px rgba(255, 82, 82, 0.5);
+}
+
+.anime-card img {
+  border-bottom: 1px solid #772e2e;
+}
+
+.card-body {
+  background-color: #3d1f1f;
+  padding: 12px;
+}
+
+/* Aquí está la mejora en .card-title */
+.card-title {
+  font-family: 'Rubik', sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  color: #fff5f5;
+  min-height: 60px;
+  text-shadow: 0 0 8px rgba(255, 82, 82, 0.9);
+  white-space: normal;
+  word-wrap: break-word;
+}
+
+.anime-card:hover .card-title {
+  color: #ff3b3b;
+  text-shadow: 0 0 8px rgba(255, 59, 59, 0.9);
+}
+
+/* Resultado detallado en anime.html */
+#anime-detail {
+  background-color: #1e1e1e;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.05);
+  padding: 30px;
+  max-width: 900px;
+  margin: auto;
+}
+
+#anime-detail img {
+  border-radius: 10px;
+  max-width: 100%;
+  box-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+
+.anime-info p {
+  text-align: left;
+  margin-bottom: 12px;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.anime-info strong {
+  color: #ff5252;
+}
+
+#anime-detail h2 {
+  color: #ffffff;
+  margin-bottom: 20px;
+  font-size: 22px;
+  border-left: 5px solid #ff5252;
+  padding-left: 10px;
+}
+
+/* Botones */
+.btn-primary, .btn-danger {
+  background-color: #ff5252;
+  border: none;
+}
+
+.btn-primary:hover, .btn-danger:hover {
+  background-color: #e04848;
+}
+
+@media (min-width: 768px) {
+  #anime-detail .row {
+    align-items: center;
+  }
+}
+
+/* Imagen en el resultado de búsqueda (index.html) */
+#animeImage {
+  border-radius: 10px;
+  background-color: rgba(30, 30, 30, 0.8); /* Fondo oscuro translúcido */
+  padding: 8px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.6); /* Sombra suave oscura */
+  max-width: 100%;
+  filter: brightness(0.95); /* Levemente más oscuro */
+}
+
+/* Tarjeta del resultado de búsqueda */
+#animeCard {
+  background-color: #1e1e1e;
+  border-radius: 12px;
+  box-shadow: 0 0 12px rgba(255, 255, 255, 0.05);
+  padding: 30px;
+  max-width: 900px;
+  margin: auto;
+  color: #ffffff;
+}
+
+/* Botón traducir sinopsis */
+.btn-translate {
+  background-color: #ffc107;
+  color: #000;
+  font-weight: bold;
+  font-size: 16px;
+  border: none;
+  padding: 10px 20px;
+  margin-top: 15px;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+  transition: background-color 0.3s ease;
+}
+
+.btn-translate:hover {
+  background-color: #ffca2c;
+  color: #000;
+  cursor: pointer;
+}
+
+/* Estilos para mensaje toast */
+.toast-message {
+  visibility: hidden;
+  min-width: 250px;
+  background-color: #ff5252; /* rojo alerta */
+  color: white;
+  text-align: center;
+  border-radius: 8px;
+  padding: 12px 20px;
+  position: fixed;
+  z-index: 9999;
+  left: 50%;
+  bottom: 30px;
+  transform: translateX(-50%);
+  font-weight: bold;
+  box-shadow: 0 0 15px rgba(255, 82, 82, 0.9);
+  opacity: 0;
+  transition: opacity 0.5s ease, visibility 0.5s;
+  pointer-events: none; /* para que no interfiera con clicks */
+}
+
+.toast-message.show {
+  visibility: visible;
+  opacity: 1;
+}
